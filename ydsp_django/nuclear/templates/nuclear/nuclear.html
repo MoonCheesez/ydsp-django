@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% block title %}Pyongyang Nuclear Centre{% endblock %}
+{% block head %}
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'stylesheets/nuclear.css' %}"/>
+<script>
+    // window.setTimeout(function() {
+    //     window.location.reload();
+    // }, 1000);
+</script>
+{% endblock %}
+{% block body %}
+<div class="container-fluid">
+    <div class="col-md-4">
+        <h1>Login:</h1>
+        <form action="/nuclear/" method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <input type="submit" value="Submit">
+        </form>
+    </div>
+</div>
+{% endblock %}
