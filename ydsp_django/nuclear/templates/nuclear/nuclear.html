@@ -3,21 +3,27 @@
 {% block head %}
 {% load static %}
 <link rel="stylesheet" type="text/css" href="{% static 'stylesheets/nuclear.css' %}"/>
-<script>
-    // window.setTimeout(function() {
-    //     window.location.reload();
-    // }, 1000);
-</script>
 {% endblock %}
 {% block body %}
 <div class="container-fluid">
     <div class="col-md-4">
+        {% if user %}
+        <div class="container-fluid">
+            <h1>Congratulations!</h1>
+            <p>Username: <span class="credential">{{ user.username }}</span></p>
+            <p>Password: <span class="credential">{{ user.password }}</span></p>
+        </div>
+        {% else %}
         <h1>Login:</h1>
         <form action="/nuclear/" method="post">
             {% csrf_token %}
             {{ form.as_p }}
-            <input type="submit" value="Submit">
+            {% if sent_form %}
+            <p id="error">Incorrect login</p>
+            {% endif %}
+            <input class="btn btn-default" type="submit" value="Submit">
         </form>
+        {% endif %}
     </div>
 </div>
 {% endblock %}
