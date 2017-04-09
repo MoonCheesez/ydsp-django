@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        {% load static %}
+        <!-- Bootstrap -->
+        <script type="text/javascript" src="{% static 'bootstrap/javascript/bootstrap.min.js' %}"></script>
+        <link rel="stylesheet" type="text/css" href="{% static 'bootstrap/stylesheets/bootstrap.min.css' %}"/>
+        <link rel="stylesheet" type="text/css" href="{% static 'bootstrap/stylesheets/bootstrap-theme.min.css' %}"/>
+
+        <link rel="stylesheet" type="text/css" href="{% static 'stylesheets/home.css' %}"/>
+        <script>
+            window.setTimeout(function() {
+                window.location.reload();
+            }, 1000);
+        </script>
+        <style>
+            body {
+                height: 100vh;
+                background-image: url({% static 'images/pyongyang.jpg' %});
+                background-attachment: fixed;
+                background-repeat: no-repeat;
+                background-position: center top;
+                background-size: 100% 100vh;
+            }
+        </style>
+    </head>
+    <body>
+        <h1 id="title">Pyongyang Nuclear Research Centre</h1>
+        <section id="content">
+            <div class="container-fluid">
+                <h1>Nothing to see here</h1>
+                <p>Lorem Ipsum Dolor</p>
+            </div>
+            <div class="container-fluid">
+                <div class="col-md-4">
+                    <h2>A</h2>
+                    <p>Lorem Ipsum</p>
+                </div>
+                <div class="col-md-4">
+                    <h2>A</h2>
+                    <p>Lorem Ipsum</p>
+                </div>
+                <div class="col-md-4">
+                    <h2>A</h2>
+                    <p>Lorem Ipsum</p>
+                </div>
+            </div>
+        </section>
+    </body>
+</html>
